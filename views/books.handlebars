@@ -1,0 +1,14 @@
+<h1>Livros disponíveis:</h1>
+<div class="books-container">
+    {{#each books}}
+    <div>
+        #{{this.id}} - <span class="bold"><a href="/books/{{this.id}}">{{this.title}}</a></span> 
+        - {{this.pageqty}} páginas
+        <form action="/books/remove/{{this.id}}" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="botao">Remover</button>
+        </form>
+    </div>
+    {{/each}} 
+</div>
+<a href="/" class="botao">Adicionar um livro</a>
